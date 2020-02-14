@@ -1,0 +1,26 @@
+body {
+  @apply font-sans;
+}
+
+a {
+  @apply no-underline transition-all duration-300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply font-serif;
+}
+
+// for Microsoft Edge to fire the IntersectionObserver for an img element, it must have a size. Since imgs are displayed inline-block as standard, MS Edge (version not specified) doesn't read them correctly.
+img[data-src],
+img[data-srcset] {
+  @apply block min-h-1;
+}
+
+// Prevents img without src to appear
+img:not([src]) {
+  @apply invisible transition-all duration-300;
+}

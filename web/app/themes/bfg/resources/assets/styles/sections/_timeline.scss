@@ -1,0 +1,75 @@
+.s-timeline {
+}
+
+.s-timeline__wrap {
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.s-timeline__item {
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0.5;
+
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+.s-timeline__toplines,
+.s-timeline__bottomlines {
+  position: absolute;
+  height: 1px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: $aqua;
+  }
+
+  &::before {
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    width: 300%;
+    will-change: transform;
+  }
+}
+
+.s-timeline__toplines {
+  top: 198px;
+  right: 90px;
+  left: calc((100vw - 1230px) / 2);
+
+  &::after {
+    transform-origin: top left;
+    left: 100%;
+    transform: rotate(var(--rotateTimelineTop));
+  }
+}
+
+.s-timeline__bottomlines {
+  bottom: 87px;
+  left: 90px;
+  right: calc((100vw - 1230px) / 2);
+
+  &::after {
+    transform-origin: top right;
+    right: 100%;
+    transform: rotate(var(--rotateTimelineBottom));
+  }
+}
+
+.s-timeline__title {
+  transform: translateX(var(--timelineTitleX));
+  will-change: transform;
+}
+
+.s-timeline__controls {
+  position: absolute;
+  right: 100px;
+  top: 140px;
+}

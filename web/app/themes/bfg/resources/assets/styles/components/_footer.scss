@@ -1,0 +1,32 @@
+.c-footerline {
+  position: absolute;
+  top: 26px;
+  height: 2px;
+  left: 0;
+  // right: calc((100vw - 1230px) / 2 + 45px);
+  right: 230px;
+  will-change: transform;
+  transform: translateY(var(--footerY));
+
+  &::before,
+  &::after {
+    content: '';
+    height: 2px;
+    background: $blue;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    left: 100%;
+    width: 100%;
+    transform: rotate(var(--footerRotate));
+    transform-origin: top left;
+    will-change: transform;
+  }
+}

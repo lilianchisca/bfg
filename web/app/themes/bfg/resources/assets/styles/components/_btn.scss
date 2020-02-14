@@ -1,0 +1,373 @@
+.c-btn__ghost-corner {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 30px);
+  width: 60px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  transition: all 0.3s;
+}
+
+.c-btn__bg {
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.c-btn {
+  &:hover {
+    .c-btn__bg {
+      clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+    }
+
+    .c-btn__ghost-corner {
+      transform: rotate(-45deg) translate(30px, 30px);
+    }
+  }
+}
+
+.s-featured-blocks__block {
+  &:hover {
+    .c-btn__bg {
+      clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+    }
+
+    .c-btn__ghost-corner {
+      transform: rotate(-45deg) translate(30px, 30px);
+    }
+  }
+}
+
+@keyframes dotsanimation1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dotsanimation2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(-35px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dotsanimation3 {
+  0% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrowanimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  70% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.c-dotsbtn {
+  padding-left: 100px;
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  padding-bottom: 3px;
+
+  .c-dotsbtn__dots {
+    span {
+      display: block;
+      position: absolute;
+
+      &:nth-child(1) {
+        width: 14px;
+        height: 14px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        top: calc(50% - 7px);
+        left: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border-radius: 50%;
+        top: calc(50% - 4px);
+      }
+
+      &:nth-child(2) {
+        left: 23px;
+        animation: dotsanimation1 2s infinite;
+      }
+
+      &:nth-child(3) {
+        left: 38px;
+        animation: dotsanimation2 2s infinite;
+      }
+
+      &:nth-child(4) {
+        left: 53px;
+        animation: dotsanimation3 2s infinite;
+      }
+
+      &:nth-child(5) {
+        width: 10px;
+        height: 15px;
+        top: calc(50% - 7.5px);
+        background: url('../images/carret.png') no-repeat center / 100% 100%;
+        left: 72px;
+        animation: arrowanimation 2s infinite;
+      }
+    }
+  }
+
+  .c-dotsbtn__text {
+    font-size: 13px;
+    line-height: 2.4;
+    letter-spacing: 0.192307692em;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #fff;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $red;
+      transform-origin: bottom right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .c-dotsbtn__text {
+      &::after {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+@keyframes dotsanimationalt1 {
+  0% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotsanimationalt2 {
+  0% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(-35px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotsanimationalt3 {
+  0% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowanimationalt {
+  0% {
+    transform: translateY(0) rotate(90deg);
+  }
+
+  70% {
+    transform: translateY(-50px) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+.c-dotsbtn--alt {
+  padding-bottom: 120px;
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+
+  .c-dotsbtn__dots {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+
+    span {
+      display: block;
+      position: absolute;
+
+      &:nth-child(1) {
+        width: 14px;
+        height: 14px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        left: calc(50% - 7px);
+        top: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        border-radius: 50%;
+        left: calc(50% - 4px);
+      }
+
+      &:nth-child(2) {
+        top: 23px;
+        animation: dotsanimationalt1 2s infinite;
+      }
+
+      &:nth-child(3) {
+        top: 38px;
+        animation: dotsanimationalt2 2s infinite;
+      }
+
+      &:nth-child(4) {
+        top: 53px;
+        animation: dotsanimationalt3 2s infinite;
+      }
+
+      &:nth-child(5) {
+        width: 10px;
+        height: 15px;
+        left: calc(50% - 5px);
+        background: url('../images/carret.png') no-repeat center / 100% 100%;
+        transform: rotate(90deg);
+        top: 72px;
+        animation: arrowanimationalt 2s infinite;
+      }
+    }
+  }
+
+  .c-dotsbtn__text {
+    font-size: 13px;
+    line-height: 2.4;
+    letter-spacing: 0.192307692em;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #fff;
+      transform-origin: bottom center;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &:hover {
+    .c-dotsbtn__text {
+      &::after {
+        transform-origin: bottom center;
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.c-linklineshrink {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: currentColor;
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+  }
+
+  .group:hover &::before {
+    transform-origin: bottom right;
+    transform: scaleX(0);
+  }
+}

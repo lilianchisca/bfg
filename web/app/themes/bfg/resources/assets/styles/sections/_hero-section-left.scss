@@ -1,0 +1,89 @@
+.s-hero-section-left {
+}
+
+.c-herotopline {
+  position: absolute;
+  bottom: 24px;
+  height: 2px;
+  left: 0;
+  right: 52vw;
+  transform: translateX(var(--lineX)) translateY(var(--bottomlineY));
+  will-change: transform;
+
+  &::before,
+  &::after {
+    content: '';
+    height: 2px;
+    background: $aqua600;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    left: -200%;
+    right: 0;
+  }
+
+  &::after {
+    left: 100%;
+    width: 200%;
+    transform: rotate(var(--linesrotate));
+    transform-origin: top left;
+    will-change: transform;
+  }
+}
+
+.c-herobottomline {
+  position: absolute;
+  bottom: 74px;
+  height: 2px;
+  left: 0;
+  right: calc(52vw - 100px);
+  transform: translateX(var(--lineX)) translateY(var(--toplineY));
+  will-change: transform;
+
+  &::before,
+  &::after {
+    content: '';
+    height: 2px;
+    background: $red;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    left: -200%;
+    right: 0;
+  }
+
+  &::after {
+    left: 100%;
+    width: 200%;
+    transform: rotate(var(--linesrotate));
+    transform-origin: top left;
+    will-change: transform;
+  }
+}
+
+.s-hero-section__calloutbg {
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.s-hero-section__callout {
+  &:hover {
+    // .s-hero-section__calloutbg {
+    //   clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0 100%, 0 0);
+    // }
+
+    .s-hero-section__calloutbg.is-aqua {
+      transform: translate(-11px, -11px);
+    }
+  }
+}

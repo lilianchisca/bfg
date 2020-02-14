@@ -1,0 +1,38 @@
+module.exports = {
+  'extends': 'stylelint-config-standard',
+  'rules': {
+    'block-no-empty': null,
+    'comment-empty-line-before': null,
+    'declaration-colon-newline-after': null,
+    'no-empty-source': null,
+    'no-descending-specificity': null,
+    'string-quotes': 'single',
+    'at-rule-no-unknown': [
+      true,
+      {
+        'ignoreAtRules': [
+          'extend',
+          'at-root',
+          'debug',
+          'warn',
+          'error',
+          'if',
+          'else',
+          'for',
+          'each',
+          'while',
+          'mixin',
+          'include',
+          'content',
+          'return',
+          'function',
+          'tailwind',
+          'apply',
+          'responsive',
+          'variants',
+          'screen',
+        ],
+      },
+    ],
+  },
+};

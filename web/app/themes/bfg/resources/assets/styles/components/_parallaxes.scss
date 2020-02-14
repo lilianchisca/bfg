@@ -1,0 +1,14 @@
+.c-topbgparallax {
+  will-change: transform;
+  transform: translateY(var(--y));
+}
+
+.c-topbgclip {
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 230px),
+    calc(100% - 230px) 100%,
+    0 100%,
+    0 0
+  );
+}

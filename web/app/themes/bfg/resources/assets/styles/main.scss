@@ -1,0 +1,18 @@
+@tailwind base;
+
+@import 'common/variables';
+
+// @import "~some-node-module";
+
+@tailwind components;
+
+/*! purgecss start ignore */
+
+@import './common/global';
+@import './components/**/*';
+@import './sections/**/*';
+@import './vendor/**/*';
+
+/*! purgecss end ignore */
+
+@tailwind utilities;
